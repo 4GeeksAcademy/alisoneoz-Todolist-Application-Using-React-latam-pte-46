@@ -4,15 +4,16 @@ import { useState } from "react";
 //create your first component
 const Home = () => {
 	const [tarea, setTarea] = useState("");
-	const [listaDeTareas, setListaDeTareas] = useState([""]);
-	console.log(typeof listaDeTareas)
+	const [listaDeTareas, setListaDeTareas] = useState([]); // cambiar a ([{}])
+	console.log(listaDeTareas)
+
 
 	return (
 		<div className="">
 			<form onSubmit={(event) => {
 				event.preventDefault()
 				setListaDeTareas([tarea, ...listaDeTareas])
-				setTarea("")
+				setTarea("")				
 			}}>
 				<input type="text"
 					onChange={(event) => {
@@ -20,20 +21,22 @@ const Home = () => {
 
 					}}
 					value={tarea} className="form-control"
-					placeholder="qlqmuchachos"
+					placeholder=""
 					aria-label="Username" aria-describedby="basic-addon1" />
-				<button
-					type="submit"
-
-				>enter</button>
+	
 			</form>
 			<div className="">
 				<ul className="list-group">
-					{listaDeTareas.map((tareaAMostrar) => {
-						return(
-						<li className="list-group-item">
-							{tareaAMostrar}
-						</li>
+					{listaDeTareas.map((tareaAMostrar, indexMap) => {
+						//const elId=crypto.randomUUID();
+						return (
+							<li key={indexMap} className="list-group-item">
+								{tareaAMostrar}
+								<button onClick={() => {
+									setListaDeTareas(listaDeTareas.filter((tarea, indexFilter) =>  indexFilter != indexMap))
+									console.log(tareaAMostrar)
+								}} >❌</button>
+							</li>
 						)
 					})}
 				</ul>
