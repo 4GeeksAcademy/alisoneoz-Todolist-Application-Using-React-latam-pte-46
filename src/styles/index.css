@@ -9,3 +9,28 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+.the-app{
+    background-color: black;
+    
+}
+.main-container{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+    background-color: wheat;
+    height:100vh;
+   
+}
+
+input, ul{
+    width:350px;
+    margin:10px 0px;
+}
+.btn-de-eliminar{
+    opacity: 0;
+}
+
+.btn-de-eliminar:hover{
+    opacity: 1;
+}

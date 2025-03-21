@@ -8,8 +8,13 @@ const Home = () => {
 	console.log(listaDeTareas)
 
 
-	return (
-		<div className="">
+	return (<div className="the-app" {
+		constructor(parameters) {
+			
+		}
+	}>
+		<div className="main-container">
+			<h1>Todo List</h1>
 			<form onSubmit={(event) => {
 				event.preventDefault()
 				setListaDeTareas([tarea, ...listaDeTareas])
@@ -25,14 +30,17 @@ const Home = () => {
 					aria-label="Username" aria-describedby="basic-addon1" />
 	
 			</form>
-			<div className="">
+			<div className="">{
+				listaDeTareas.length == 0 ? (
+					<p>No tasks </p>
+				) :(
 				<ul className="list-group">
 					{listaDeTareas.map((tareaAMostrar, indexMap) => {
-						//const elId=crypto.randomUUID();
+										
 						return (
 							<li key={indexMap} className="list-group-item">
 								{tareaAMostrar}
-								<button onClick={() => {
+								<button className="btn-de-eliminar" onClick={() => {
 									setListaDeTareas(listaDeTareas.filter((tarea, indexFilter) =>  indexFilter != indexMap))
 									console.log(tareaAMostrar)
 								}} >❌</button>
@@ -40,8 +48,10 @@ const Home = () => {
 						)
 					})}
 				</ul>
+				)}
 			</div>
 		</div>
+		</>
 	);
 };
 
