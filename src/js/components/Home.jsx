@@ -8,11 +8,9 @@ const Home = () => {
 	console.log(listaDeTareas)
 
 
-	return (<div className="the-app" {
-		constructor(parameters) {
-			
-		}
-	}>
+	return (
+	
+	<div className="the-app">
 		<div className="main-container">
 			<h1>Todo List</h1>
 			<form onSubmit={(event) => {
@@ -51,7 +49,7 @@ const Home = () => {
 				)}
 			</div>
 		</div>
-		</>
+		</div>
 	);
 };
 
