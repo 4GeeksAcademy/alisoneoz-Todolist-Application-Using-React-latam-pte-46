@@ -22,7 +22,9 @@
     height:100vh;
    
 }
-
+li:hover .btn-de-eliminar{
+    opacity: 1;
+}
 input, ul{
     width:350px;
     margin:10px 0px;
@@ -31,6 +33,3 @@ input, ul{
     opacity: 0;
 }
 
-.btn-de-eliminar:hover{
-    opacity: 1;
-}
